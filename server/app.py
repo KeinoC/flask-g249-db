@@ -10,7 +10,6 @@ from models import User, Unit, Lessee, Lessor, Lease, UnitApplication
 
 date_str = '1995-05-23'
 
-
 @app.route('/')
 def index():
     return 'Flask DB connected!'
