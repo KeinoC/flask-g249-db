@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 from datetime import datetime
 from flask import request, session, jsonify
-from flask_restful import Resource
+from flask_restful import Resource, Api
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import joinedload
 
-from config import app, db, api
+from config import db, app
 from models import User, Unit, Lessee, Lessor, Lease, UnitApplication
 
 date_str = '1995-05-23'
@@ -14,6 +14,8 @@ date_str = '1995-05-23'
 def index():
     return 'Flask DB connected!'
 
+
+api = Api(app)
 class Signup(Resource):
     
     def post(self):
