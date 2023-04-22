@@ -8,11 +8,21 @@
     ],
     "routes": [
         {
+            "src": "/api/(.*)",
+            "dest": "/api/$1"
+        },
+        {
             "src": "/(.*)",
             "dest": "/app.py"
         }
     ],
     "env": {
         "APP_MODULE": "app"
+    },
+    "functions": {
+        "api/**/*": {
+            "runtime": "@vercel/python@1.0.0",
+            "memory": 256
+        }
     }
 }
