@@ -1,0 +1,10 @@
+version: 2
+name: my-flask-app
+env: python
+build:
+  use:
+    python-version: 3.8
+run:
+  commands:
+    - pip install -r requirements.txt
+    - python app.py
